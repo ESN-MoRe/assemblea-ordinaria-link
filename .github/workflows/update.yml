@@ -29,21 +29,12 @@ jobs:
           if [ "$FILE_ID" != "null" ] && [ -n "$FILE_ID" ]; then
             echo "Found file ID: $FILE_ID"
             
-            # Create/Overwrite index.html with an automatic redirect
-            cat <<EOF > index.html
-            <!DOCTYPE html>
-            <html>
-              <head>
-                <meta http-equiv="refresh" content="0; url=https://drive.google.com/file/d/${FILE_ID}/view">
-                <title>Redirecting to latest Assemblea Ordinaria...</title>
-              </head>
-              <body>
-                <p>Redirecting... If you are not redirected automatically, <a href="https://drive.google.com/file/d/${FILE_ID}/view">click here</a>.</p>
-              </body>
-            </html>
-            EOF
+            # Create index.html on a single line to avoid bash/yaml indentation errors
+            echo "<!DOCTYPE html><html><head><meta http-equiv=\"refresh\" content=\"0; url=https://drive.google.com/file/d/${FILE_ID}/view\"><title>Redirecting...</title></head><body><p>Redirecting... If you are not redirected automatically, <a href=\"https://drive.google.com/file/d/${FILE_ID}/view\">click here</a>.</p></body></html>" > index.html
+            
           else
-            echo "No file found or API error. Check if the folder is empty or API key is correct."
+            echo "No file found or API error."
+            echo "API Response was: $RESPONSE"
             exit 1
           fi
 
