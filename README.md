@@ -2,7 +2,7 @@
 
 Questo repository gestisce un link permanente che reindirizza sempre in automatico al **PDF più recente** della convocazione per l'Assemblea Ordinaria di **ESN Modena e Reggio Emilia**.
 
-**Link ufficiale:** [https://esn-more.github.io/assemblea-ordinaria-link/](https://esn-more.github.io/assemblea-ordinaria-link/)
+**Link ufficiale:** [https://esn-modena-e-reggio-emilia.github.io/assemblea-ordinaria-link/](https://esn-modena-e-reggio-emilia.github.io/assemblea-ordinaria-link/)
 
 ## Come funziona?
 
